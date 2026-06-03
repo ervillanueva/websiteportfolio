@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///Users/student/Downloads/index_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric Villanueva | Data Analyst &amp; Data Scientist</title>
+<link href="./Eric Villanueva _ Data Analyst &amp; Data Scientist_files/css2" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+a{text-decoration:none;color:inherit;}
+
+:root {
+  --bg:    #141210;
+  --bg2:   #1a1714;
+  --bg3:   #211e1a;
+  --border:#2e2923;
+  --text:  #e8e0d4;
+  --muted: #7a7068;
+  --muted2:#5a5048;
+  --accent:#8faa6e;
+  --accent2:#c49a5a;
+}
+
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;}
+.site{background:var(--bg);}
+
+.topnav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:var(--bg);}
+.nav-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:var(--text);display:flex;align-items:center;gap:8px;}
+.nav-brand span{color:var(--muted2);font-weight:400;font-size:13px;}
+.nav-links{display:flex;gap:2.5rem;}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+.nav-links a:hover{color:var(--accent);}
+
+.page-wrap{display:flex;}
+.left-rail{width:52px;display:flex;flex-direction:column;align-items:center;padding-top:3rem;gap:1.5rem;border-right:1px solid var(--border);position:sticky;top:56px;height:calc(100vh - 56px);}
+.rail-icon{color:var(--muted2);font-size:20px;transition:color 0.2s;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.rail-icon:hover{color:var(--accent);}
+.rail-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.main-content{flex:1;overflow:hidden;}
+
+.hero{display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center;padding:4rem 3rem 4rem 2.5rem;border-bottom:1px solid var(--border);}
+.hello{font-size:15px;color:var(--muted);margin-bottom:0.75rem;}
+.big-name{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:0.95;margin-bottom:1.25rem;}
+.big-name .first{display:block;font-size:clamp(3.5rem,7vw,6rem);color:var(--text);letter-spacing:-3px;}
+.big-name .last{display:block;font-size:clamp(3.5rem,7vw,6rem);color:var(--accent);letter-spacing:-3px;}
+.role-line{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:0.4rem;}
+.sub-line{font-size:13px;color:var(--muted);margin-bottom:2rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.dot-sep{width:4px;height:4px;border-radius:50%;background:var(--muted2);display:inline-block;}
+.hero-btns{display:flex;align-items:center;gap:1.5rem;}
+.btn-main{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#0f1409;font-size:13px;font-weight:700;padding:10px 20px;border-radius:6px;cursor:pointer;transition:opacity 0.2s;}
+.btn-main:hover{opacity:0.85;}
+.btn-ghost{font-size:13px;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:5px;transition:color 0.2s;cursor:pointer;}
+.btn-ghost:hover{color:var(--accent2);}
+.photo-box{width:100%;aspect-ratio:3/4;border-radius:18px;background:var(--bg3);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;}
+.photo-box img{width:100%;height:100%;object-fit:cover;display:block;}
+.photo-placeholder-text{font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted2);}
+
+.chat-bar-wrap{padding:1.5rem 3rem;border-bottom:1px solid var(--border);}
+.chat-bar{background:var(--bg3);border:1px solid var(--border);border-radius:50px;display:flex;align-items:center;gap:12px;padding:10px 10px 10px 18px;transition:border-color 0.2s;}
+.chat-bar:focus-within{border-color:var(--accent);}
+.chat-icon{color:var(--accent);font-size:18px;flex-shrink:0;display:flex;}
+.chat-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.chat-input{flex:1;background:transparent;border:none;outline:none;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);caret-color:var(--accent);}
+.chat-input::placeholder{color:var(--muted2);}
+.chat-btn{background:var(--accent);color:#0f1409;font-size:12px;font-weight:700;letter-spacing:0.05em;padding:8px 18px;border-radius:50px;border:none;cursor:pointer;transition:opacity 0.2s;flex-shrink:0;}
+.chat-btn:hover{opacity:0.85;}
+.ai-response{margin:0 3rem;background:var(--bg3);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:0;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;}
+.ai-response.open{max-height:400px;padding:1rem 1.5rem;}
+.ai-response-inner{font-size:14px;color:var(--muted);line-height:1.75;}
+.thinking{color:var(--muted2);font-style:italic;font-size:13px;}
+
+.section{padding:4rem 3rem;border-bottom:1px solid var(--border);}
+.sec-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:1.75rem;}
+.about-big{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--text);line-height:1.45;margin-bottom:1.5rem;letter-spacing:-0.3px;}
+.about-small{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:1rem;max-width:700px;}
+.about-small a{color:var(--accent2);font-weight:500;}
+.facts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.75rem;margin-top:2rem;}
+.fact-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;display:flex;align-items:flex-start;gap:10px;}
+.fact-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.fact-text{font-size:12.5px;color:var(--muted);line-height:1.6;}
+.fact-text strong{color:var(--text);font-weight:600;display:block;margin-bottom:2px;font-size:12px;}
+
+.skills-strip{display:flex;flex-wrap:wrap;gap:8px;padding:2rem 3rem;border-bottom:1px solid var(--border);}
+.sk{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:7px 14px;font-size:12px;font-weight:500;color:var(--muted);display:flex;align-items:center;gap:7px;}
+.sk::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent2);flex-shrink:0;}
+
+.career-section{padding:4rem 3rem;border-bottom:1px solid var(--border);}
+.timeline{border-left:1px solid var(--border);margin-left:8px;padding-left:2rem;display:flex;flex-direction:column;}
+.tl-item{position:relative;padding-bottom:2.75rem;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{content:'';position:absolute;left:-2.45rem;top:6px;width:9px;height:9px;border-radius:50%;background:var(--accent2);border:2px solid var(--bg);}
+.tl-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:3px;flex-wrap:wrap;}
+.tl-role{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--text);}
+.tl-date{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent2);white-space:nowrap;}
+.tl-co{font-size:13px;color:var(--muted2);margin-bottom:10px;}
+.tl-bullets{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px;}
+.tl-bullets li{font-size:13px;color:var(--muted);line-height:1.7;padding-left:16px;position:relative;}
+.tl-bullets li::before{content:'·';position:absolute;left:0;color:var(--accent);font-size:18px;line-height:1.2;}
+
+.edu-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;}
+.edu-degree{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.95rem;color:var(--text);margin-bottom:3px;}
+.edu-school{font-size:13px;color:var(--muted2);margin-bottom:6px;}
+.edu-badges{display:flex;flex-wrap:wrap;gap:6px;}
+.edu-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px;background:var(--bg);border:1px solid var(--border);color:var(--muted);}
+
+.work-section{padding:4rem 3rem;border-bottom:1px solid var(--border);}
+.work-heading{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.2rem,4vw,3.2rem);color:var(--text);letter-spacing:-1.5px;margin-bottom:3rem;}
+.work-heading span{color:var(--accent);}
+.proj-inner{display:none;}
+.proj-inner.active{display:block;}
+.proj-top{display:flex;align-items:flex-start;gap:2rem;margin-bottom:1.5rem;}
+.proj-big-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:5rem;color:var(--bg3);line-height:1;flex-shrink:0;margin-top:-0.5rem;user-select:none;}
+.proj-category{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.proj-title-big{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.4rem,2.5vw,1.9rem);color:var(--text);letter-spacing:-0.5px;margin-bottom:0.75rem;}
+.proj-bullets{list-style:none;padding:0;max-width:640px;margin-bottom:1.25rem;display:flex;flex-direction:column;gap:5px;}
+.proj-bullets li{font-size:13px;color:var(--muted);line-height:1.7;padding-left:16px;position:relative;}
+.proj-bullets li::before{content:'·';position:absolute;left:0;color:var(--accent);font-size:18px;line-height:1.2;}
+.proj-tools-row{display:flex;align-items:center;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap;}
+.proj-tools-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2);}
+.proj-tag{font-size:11px;font-weight:600;padding:3px 9px;border-radius:4px;background:var(--bg3);border:1px solid var(--border);color:var(--muted);}
+.proj-impact{display:inline-block;border:1px solid var(--accent2);color:var(--accent2);font-size:12px;font-weight:500;padding:8px 18px;border-radius:6px;}
+
+.proj-nav{display:flex;align-items:center;gap:1rem;margin-top:2.5rem;}
+.nav-arrow{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color 0.2s,color 0.2s;font-size:16px;}
+.nav-arrow:hover{border-color:var(--accent);color:var(--accent);}
+.dots{display:flex;gap:6px;align-items:center;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:background 0.2s,width 0.2s;}
+.dot.active{background:var(--accent);width:22px;border-radius:4px;}
+
+.contact-wrap{padding:4rem 3rem;}
+.contact-box{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:2.5rem;text-align:center;max-width:560px;}
+.contact-box h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;color:var(--text);letter-spacing:-0.5px;margin-bottom:0.75rem;}
+.contact-box p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:1.75rem;}
+.clinks{display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;}
+.clink{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:9px 18px;border:1px solid var(--border);border-radius:6px;color:var(--muted);transition:border-color 0.2s,color 0.2s;cursor:pointer;display:inline-block;}
+.clink:hover{border-color:var(--accent);color:var(--accent);}
+
+.footer{border-top:1px solid var(--border);padding:1.25rem 3rem;display:flex;align-items:center;justify-content:space-between;}
+.footer-text{font-size:12px;color:var(--muted2);}
+.footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12px;color:var(--muted2);}
+
+@media (max-width: 768px) {
+  .topnav{padding:1rem 1.25rem;}
+  .nav-links{display:none;}
+  .left-rail{display:none;}
+  .hero{grid-template-columns:1fr;padding:2.5rem 1.5rem;}
+  .photo-box{display:none;}
+  .section,.career-section,.work-section,.contact-wrap,.chat-bar-wrap{padding-left:1.5rem;padding-right:1.5rem;}
+  .skills-strip{padding:1.5rem;}
+  .ai-response{margin:0 1.5rem;}
+  .footer{padding:1rem 1.5rem;}
+}
+</style>
+</head>
+<body>
+<div class="site">
+  <nav class="topnav">
+    <div class="nav-brand">EV <span>/ DATA &amp; ANALYTICS</span></div>
+    <div class="nav-links">
+      <a href="file:///Users/student/Downloads/index_1.html#about">About</a>
+      <a href="file:///Users/student/Downloads/index_1.html#career">Career</a>
+      <a href="file:///Users/student/Downloads/index_1.html#work">Work</a>
+      <a href="file:///Users/student/Downloads/index_1.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+    <div class="left-rail">
+      <a href="https://github.com/ervillanueva" target="_blank" class="rail-icon" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/eric-villanueva-310741193/" target="_blank" class="rail-icon" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+      </a>
+      <a href="mailto:ericjr143@gmail.com" class="rail-icon" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      </a>
+    </div>
+
+    <div class="main-content">
+
+      <!-- HERO -->
+      <div class="hero" id="top">
+        <div>
+          <p class="hello">Hello! I'm</p>
+          <div class="big-name">
+            <span class="first">ERIC</span>
+            <span class="last">VILLANUEVA</span>
+          </div>
+          <p class="role-line">Aspiring Data Analyst &amp; Data Scientist</p>
+          <p class="sub-line">
+            CS grad · Chapman University
+            <span class="dot-sep"></span>
+            San Francisco, CA
+          </p>
+          <div class="hero-btns">
+            <a href="file:///Users/student/Downloads/index_1.html#" class="btn-main">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Resume
+            </a>
+            <a href="file:///Users/student/Downloads/index_1.html#contact" class="btn-ghost">Get in touch →</a>
+          </div>
+        </div>
+        <div class="photo-box">
+          <!-- Replace the lines below with: <img src="your-photo.jpg" alt="Eric Villanueva"> -->
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#5a5048" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span class="photo-placeholder-text">Add your photo here</span>
+        </div>
+      </div>
+
+      <!-- AI CHAT BAR -->
+      <div class="chat-bar-wrap">
+        <div class="chat-bar">
+          <span class="chat-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </span>
+          <input class="chat-input" id="chatInput" type="text" placeholder="Ask me anything about my work, experience, or background...">
+          <button class="chat-btn" id="chatSend">Chat</button>
+        </div>
+      </div>
+      <div class="ai-response" id="aiResponse">
+        <div class="ai-response-inner" id="aiText"></div>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="section" id="about">
+        <div class="sec-label">About me</div>
+        <p class="about-big">I'm a data-focused CS grad, born and raised in San Francisco, half Mexican and half Filipino, turning messy datasets into clear and decision-ready insight.</p>
+        <p class="about-small">I work with Python, SQL, Tableau, Power BI, and APIs, building pipelines and analyses that people actually use. I treat data like a product: clean structure, clear logic, and outputs that make sense to non-technical stakeholders.</p>
+        <p class="about-small">Outside of work, I'm building the <a href="file:///Users/student/Downloads/index_1.html#">Resale Market Price Tracker</a>, a project at the intersection of fashion, data, and market intelligence. I care deeply about expanding access and representation in tech for Black and Latinx communities.</p>
+        <div class="facts-grid">
+          <div class="fact-card">
+            <span class="fact-icon">🥾</span>
+            <div class="fact-text"><strong>Outdoors and Hiking</strong>Born and raised in the Bay Area, I love being outside on trails, in parks, and anywhere that gets me off a screen.</div>
+          </div>
+          <div class="fact-card">
+            <span class="fact-icon">🎵</span>
+            <div class="fact-text"><strong>Music Obsessed</strong>My taste runs across all genres. Current favorites are Blood Orange, Kelela, and FKA Twigs.</div>
+          </div>
+          <div class="fact-card">
+            <span class="fact-icon">📖</span>
+            <div class="fact-text"><strong>Currently Reading</strong>My favorite book is <em>Giovanni's Room</em> by James Baldwin. Raw, precise, and unforgettable.</div>
+          </div>
+          <div class="fact-card">
+            <span class="fact-icon">♠️</span>
+            <div class="fact-text"><strong>Poker Student</strong>Working on sharpening my game. I love the strategy, probability, and psychology behind every hand.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="skills-strip">
+        <div class="sk">Python</div>
+        <div class="sk">Pandas</div>
+        <div class="sk">NumPy</div>
+        <div class="sk">Scikit-learn</div>
+        <div class="sk">SQL / MySQL</div>
+        <div class="sk">R</div>
+        <div class="sk">Tableau</div>
+        <div class="sk">Power BI</div>
+        <div class="sk">Excel</div>
+        <div class="sk">Matplotlib</div>
+        <div class="sk">Seaborn</div>
+        <div class="sk">Git</div>
+        <div class="sk">Jupyter</div>
+        <div class="sk">Feature Engineering</div>
+        <div class="sk">EDA</div>
+      </div>
+
+      <!-- CAREER -->
+      <div class="career-section" id="career">
+        <div class="sec-label">Experience</div>
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-header">
+              <div class="tl-role">Research &amp; Data Operations</div>
+              <div class="tl-date">Jan 2025 to Present</div>
+            </div>
+            <div class="tl-co">Stealth Robotics Startup · San Francisco, CA</div>
+            <ul class="tl-bullets">
+              <li>Collected and structured operational data from robotic systems performing household task automation to support ML model development and training pipelines.</li>
+              <li>Worked with engineering teams to apply standardized data collection protocols, keeping datasets consistent and reliable across evaluation cycles.</li>
+              <li>Contributed to iterative model evaluation by surfacing behavioral patterns and performance gaps through systematic data review.</li>
+            </ul>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-header">
+              <div class="tl-role">Mail &amp; Logistics Coordinator</div>
+              <div class="tl-date">Aug 2022 to Sep 2024</div>
+            </div>
+            <div class="tl-co">Chapman University · Orange, CA</div>
+            <ul class="tl-bullets">
+              <li>Processed and sorted 350+ packages daily across Amazon and major carriers with 99% accuracy, maintaining throughput under time constraints.</li>
+              <li>Maintained detailed records of all incoming mail and packages to support inventory tracking and data integrity across 4+ campus buildings.</li>
+            </ul>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-header">
+              <div class="tl-role">Front-End Web Development Intern</div>
+              <div class="tl-date">Jun 2020 to Sep 2020</div>
+            </div>
+            <div class="tl-co">Code Tenderloin · San Francisco, CA</div>
+            <ul class="tl-bullets">
+              <li>Built and deployed a website using HTML, CSS, and JavaScript to highlight housing insecurity and social injustices facing San Francisco's unhoused population.</li>
+              <li>Documented and analyzed tech employee work culture to surface insights on industry accessibility and barriers for underrepresented communities.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div style="margin-top:2.5rem;">
+          <div class="sec-label" style="margin-bottom:1rem;">Education</div>
+          <div class="edu-card">
+            <div class="edu-degree">B.S. Computer Science, Minor in Business Administration</div>
+            <div class="edu-school">Chapman University · Orange, CA</div>
+            <div class="edu-badges">
+              <span class="edu-badge">Aug 2021 to May 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MY WORK -->
+      <div class="work-section" id="work">
+        <div class="work-heading">My <span>Work</span></div>
+        <div id="projDisplay">
+
+          <div class="proj-inner active">
+            <div class="proj-top">
+              <div class="proj-big-num">01</div>
+              <div>
+                <div class="proj-category">SQL / Analytics / Visualization</div>
+                <div class="proj-title-big">COVID-19 Global Data Analysis</div>
+                <ul class="proj-bullets">
+                  <li>Modeled and joined two tables across 200+ countries to analyze infection rates, death counts, and vaccination rollout over time.</li>
+                  <li>Wrote queries using window functions, CTEs, and temp tables to track rolling vaccination totals and infection rates by country.</li>
+                  <li>Built SQL views to store key metrics by continent and country for downstream visualization.</li>
+                </ul>
+                <div class="proj-tools-row">
+                  <span class="proj-tools-label">Tools</span>
+                  <span class="proj-tag">SQL</span>
+                  <span class="proj-tag">Excel</span>
+                  <span class="proj-tag">Tableau</span>
+                </div>
+                <span class="proj-impact">200+ countries analyzed across the full pandemic timeline</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-inner">
+            <div class="proj-top">
+              <div class="proj-big-num">02</div>
+              <div>
+                <div class="proj-category">Machine Learning / EDA</div>
+                <div class="proj-title-big">Spotify Streams Analysis</div>
+                <ul class="proj-bullets">
+                  <li>Analyzed 4,600+ Spotify songs and found Playlist Count (R² = 0.74) was a significantly stronger predictor of streams than Playlist Reach (R² = 0.32).</li>
+                  <li>Compared polynomial regression models across degrees 2, 3, and 4 on an 80/20 split; degree-2 was optimal as higher-degree models severely overfit the training data.</li>
+                  <li>Applied GMM clustering with AIC selection and compared DBSCAN vs. K-Means on 2,600+ songs, selecting K-Means (k=2, silhouette = 0.49) for cleaner cluster results.</li>
+                </ul>
+                <div class="proj-tools-row">
+                  <span class="proj-tools-label">Tools</span>
+                  <span class="proj-tag">Python</span>
+                  <span class="proj-tag">Scikit-learn</span>
+                  <span class="proj-tag">Pandas</span>
+                </div>
+                <span class="proj-impact">4,600+ songs analyzed across regression and clustering models</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-inner">
+            <div class="proj-top">
+              <div class="proj-big-num">03</div>
+              <div>
+                <div class="proj-category">SQL / Power BI / HR Analytics</div>
+                <div class="proj-title-big">HR Analytics Dashboard</div>
+                <ul class="proj-bullets">
+                  <li>Cleaned and structured 22,000+ employee records spanning 2000 to 2020 in MySQL Workbench, standardizing date formats, normalizing categorical fields, and creating calculated columns for age, tenure, and termination metrics.</li>
+                  <li>Wrote SQL queries to aggregate workforce data by department, job title, race, gender, and state, then exported cleaned data into Power BI for visualization.</li>
+                  <li>Built an interactive Power BI dashboard covering gender and race distribution, age group breakdowns, HQ vs. remote splits, employee count trends over time, and turnover rates by department.</li>
+                </ul>
+                <div class="proj-tools-row">
+                  <span class="proj-tools-label">Tools</span>
+                  <span class="proj-tag">SQL</span>
+                  <span class="proj-tag">MySQL Workbench</span>
+                  <span class="proj-tag">Power BI</span>
+                </div>
+                <span class="proj-impact">22,000+ employee records analyzed across a 20-year window</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-inner">
+            <div class="proj-top">
+              <div class="proj-big-num">04</div>
+              <div>
+                <div class="proj-category">Data Engineering / Analytics</div>
+                <div class="proj-title-big">Resale Market Price Tracker</div>
+                <ul class="proj-bullets">
+                  <li>Built an end-to-end pipeline pulling live eBay sold listings for luxury fashion brands like Bottega Veneta and Acne Studios.</li>
+                  <li>Parsed JSON API responses and cleaned and structured pricing data with Pandas to surface market trends for resale intelligence.</li>
+                  <li>Actively expanding brand coverage and visualization layer for deeper price trend analysis.</li>
+                </ul>
+                <div class="proj-tools-row">
+                  <span class="proj-tools-label">Tools</span>
+                  <span class="proj-tag">Python</span>
+                  <span class="proj-tag">Pandas</span>
+                  <span class="proj-tag">eBay API</span>
+                  <span class="proj-tag">JSON</span>
+                </div>
+                <span class="proj-impact">Live market data pipeline, actively in development</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="proj-nav">
+          <button class="nav-arrow" id="prevBtn">←</button>
+          <div class="dots">
+            <div class="dot active" data-i="0"></div>
+            <div class="dot" data-i="1"></div>
+            <div class="dot" data-i="2"></div>
+            <div class="dot" data-i="3"></div>
+          </div>
+          <button class="nav-arrow" id="nextBtn">→</button>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="contact-wrap" id="contact">
+        <div class="sec-label" style="margin-bottom:1.5rem;">Get in touch</div>
+        <div class="contact-box">
+          <h3>Let's build something together</h3>
+          <p>Open to data analyst, data scientist, and associate PM roles, especially in fashion tech, robotics, or social impact. Born and raised in San Francisco.</p>
+          <div class="clinks">
+            <a href="mailto:ericjr143@gmail.com" class="clink">Email</a>
+            <a href="https://www.linkedin.com/in/eric-villanueva-310741193/" target="_blank" class="clink">LinkedIn</a>
+            <a href="https://github.com/ervillanueva" target="_blank" class="clink">GitHub</a>
+            <a href="file:///Users/student/Downloads/index_1.html#" class="clink">Resume</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span class="footer-text">© 2025 Eric Villanueva</span>
+        <span class="footer-brand">EV / DATA &amp; ANALYTICS</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const ERIC_CONTEXT = `You are an AI assistant on Eric Villanueva's portfolio website. Answer questions about Eric concisely in first person as if you are Eric. Keep answers to 2-3 sentences max. Eric Villanueva is a CS graduate from Chapman University (class of 2025, minor in Business Administration), born and raised in San Francisco, half Mexican and half Filipino. He works in Research and Data Operations at a stealth robotics startup in San Francisco. Skills: Python, Pandas, NumPy, Scikit-learn, SQL, MySQL, R, Tableau, Power BI, Excel, Matplotlib, Seaborn, Git, Jupyter, Feature Engineering, EDA. Projects: COVID-19 Global Data Analysis (SQL, Tableau), Spotify Streams Analysis (polynomial regression, GMM clustering, K-Means on 4600+ songs), HR Analytics Dashboard (MySQL, Power BI, 22000+ employee records), Resale Market Price Tracker (eBay API, Python, Pandas). Previous roles: Mail and Logistics Coordinator at Chapman University, Front-End Web Dev Intern at Code Tenderloin (2020). Passionate about diversity in tech for Black and Latinx communities. Loves hiking, music (Blood Orange, Kelela, FKA Twigs), Giovanni's Room by James Baldwin, and poker. Open to data analyst, data scientist, and associate PM roles especially in fashion tech, robotics, or social impact.`;
+
+const input = document.getElementById('chatInput');
+const btn = document.getElementById('chatSend');
+const responseBox = document.getElementById('aiResponse');
+const responseText = document.getElementById('aiText');
+
+async function sendChat() {
+  const q = input.value.trim();
+  if (!q) return;
+  btn.disabled = true;
+  btn.textContent = '...';
+  responseText.innerHTML = '<span class="thinking">Thinking...</span>';
+  responseBox.classList.add('open');
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: ERIC_CONTEXT,
+        messages: [{role: 'user', content: q}]
+      })
+    });
+    const data = await res.json();
+    const text = data.content?.[0]?.text || 'Sorry, something went wrong.';
+    responseText.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  } catch(e) {
+    responseText.textContent = 'Something went wrong. Please try again.';
+  }
+  btn.disabled = false;
+  btn.textContent = 'Chat';
+  input.value = '';
+}
+btn.addEventListener('click', sendChat);
+input.addEventListener('keydown', e => { if (e.key === 'Enter') sendChat(); });
+
+let current = 0;
+const projects = document.querySelectorAll('.proj-inner');
+const dots = document.querySelectorAll('.dot');
+function goTo(n) {
+  projects[current].classList.remove('active');
+  dots[current].classList.remove('active');
+  current = (n + projects.length) % projects.length;
+  projects[current].classList.add('active');
+  dots[current].classList.add('active');
+}
+document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.i)));
+</script>
+
+
+</body></html>
